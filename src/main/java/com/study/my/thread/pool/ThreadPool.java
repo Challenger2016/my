@@ -26,7 +26,8 @@ public class ThreadPool {
   private volatile static int j;
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-
+    System.out.println(Math.pow(33, 7));
+    System.out.println(65%3233);
     ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 8, 120, TimeUnit.SECONDS, new PriorityBlockingQueue<>(), new ThreadPoolExecutor.CallerRunsPolicy());
     for (int i = 0; i < 10; i++) {
       executor.execute(new ThreadTest(j));
