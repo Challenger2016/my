@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+  
+  <!-- 加载spring容器 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:spring/applicationContext-*.xml</param-value>
+  </context-param>
+  
+  <!-- springmvc调度器 -->
+  <servlet>
+    <servlet-name>springmvc</servlet-name>
+    <servlet-class>
+ 		com.DispatcherServlet
+ 	</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>application.properties</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>springmvc</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  	<session-config>
+        <session-timeout>120</session-timeout>
+    </session-config>
+    
+    <welcome-file-list>
+		<welcome-file></welcome-file>
+ 	</welcome-file-list>
+ 	
+ 	<error-page>  
+		<error-code>400</error-code>  
+		<location>/error/400.html</location>  
+	</error-page>
+	<error-page>  
+		<error-code>404</error-code>  
+		<location>/error/404.html</location>  
+	</error-page>
+	
+	<error-page>  
+		<error-code>500</error-code>  
+		<location>/error/500.html</location>  
+	</error-page>
+</web-app>
