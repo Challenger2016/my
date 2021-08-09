@@ -68,7 +68,7 @@
 		<!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch -->
 		<dependency>
 		    <groupId>org.elasticsearch</groupId>
-		    <version>6.4.0</version><!--$NO-MVN-MAN-VER$-->
+		    <version>6.8.17</version><!--$NO-MVN-MAN-VER$-->
 		    <artifactId>elasticsearch</artifactId>
 		    
 		</dependency>
